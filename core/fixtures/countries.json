@@ -1,5 +1,13 @@
 [
   {
+    "pk": "aol", 
+    "model": "core.country", 
+    "fields": {
+      "region": "North America", 
+      "name": "California"
+    }
+  },
+  {
     "pk": "af", 
     "model": "core.country", 
     "fields": {
