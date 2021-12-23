@@ -106,8 +106,8 @@ If sending email from different server, replace `@' + url.hostname` with host.
 Space at the end of EMAIL_SUBJECT_PREFIX intentional
 to separate subject from prefix.
 """
-DEFAULT_FROM_EMAIL = 'YOUR_PROJECT_NAME_ABBREVIATION-no-reply@' + url.hostname
-EMAIL_SUBJECT_PREFIX = '[YOUR_PROJECT_NAME_ABBREVIATION] '
+DEFAULT_FROM_EMAIL = 'aragon-outlook-archives-no-reply@' + url.hostname
+EMAIL_SUBJECT_PREFIX = '[aragon-outlook-archives] '
 
 
 ################################################################
