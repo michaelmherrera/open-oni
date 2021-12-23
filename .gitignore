@@ -1,6 +1,5 @@
 *.pyc
 ENV
-onisite/settings_local.py
 onisite/urls.py
 *.log
 data/batches
@@ -15,8 +14,9 @@ static/sitemaps
 .DS_Store
 
 #Ignore all user added themes, but keep default
-themes/*
-!themes/default
+# Actually, track themes!
+# themes/*
+# !themes/default
 
 # Ignore all plugins, but keep the directory module and readme
 onisite/plugins/*
