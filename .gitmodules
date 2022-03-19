@@ -1,0 +1,3 @@
+[submodule "themes/outlook-archive-theme"]
+	path = themes/outlook-archive-theme
+	url = https://github.com/michaelmherrera/outlook-archive-theme.git
