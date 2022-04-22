@@ -5,6 +5,22 @@ networks:
     driver: bridge
 
 services:
+  swag:
+    image: ghcr.io/linuxserver/swag
+    environment:
+      - TZ=Europe/London
+      - URL=archives.aragonoutlook.org
+      - CERTPROVIDER=zerossl
+      - EMAIL=w0pw6n914@mozmail.com
+    volumes:
+      - "./reverse-proxy/default.conf:/config/nginx/site-confs/default:ro"
+    depends_on:
+      - web
+    ports:
+      - 443:443
+      - 80:80 #optional
+    networks:
+      - oninet
   rdbms:
     image: mariadb:10.4
     environment:
@@ -44,8 +60,11 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - ./:/opt/openoni:z
-    ports:
-      - ${HTTPPORT:-80}:80
+      - "/home/ec2-user/ssl-cert-snakeoil.pem:/etc/ssl/certs/ssl-cert-snakeoil.pem"
+      - "/home/ec2-user/ssl-cert-snakeoil.key:/etc/ssl/private/ssl-cert-snakeoil.key"
+    # ports:
+      # - ${HTTPPORT:-80}:80
+      # - 443:443
     depends_on:
       - rdbms
     links:
